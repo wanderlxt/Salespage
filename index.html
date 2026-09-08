@@ -1,195 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Hypertrophy Codex</title>
 
     <style>
         /* Modern Design System Tokens - Updated for Dark Mode */
-        :root { 
-            --bg-color: #0f172a; 
-            --card-bg: #1e293b; 
-            --text-main: #f8fafc; 
-            --text-muted: #94a3b8; 
-            --primary: #3b82f6; 
-            --primary-hover: #60a5fa; 
-            --accent: #34d399; 
-            --border: #334155; 
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1); 
-            --radius: 12px; 
-        } 
-        
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-        } 
-        
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            line-height: 1.6; 
-            padding: 20px 15px; 
-        } 
-        
-        .container { 
-            max-width: 500px; 
-            margin: 0 auto; 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            border-radius: var(--radius); 
-            box-shadow: var(--shadow); 
-            overflow: hidden; 
-        } 
-        
-        .cover-wrapper { 
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
-            padding: 40px 20px; 
-            text-align: center; 
-            border-bottom: 1px solid var(--border); 
-        } 
-        
-        .book-image { 
-            max-width: 100%; 
-            width: 180px; 
-            height: auto; 
-            border-radius: 4px 8px 8px 4px; 
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
-            display: block; 
-            margin: 0 auto; 
-        } 
-        
-        .content { 
-            padding: 30px 24px; 
-        } 
-        
-        .tag { 
-            display: inline-block; 
-            background: #1e3a8a; 
-            color: #93c5fd; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            padding: 4px 10px; 
-            border-radius: 20px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            margin-bottom: 12px; 
-        } 
-        
-        h1 { 
-            font-size: 1.75rem; 
-            line-height: 1.25; 
-            margin-bottom: 8px; 
-            letter-spacing: -0.02em; 
-        } 
-        
-        .author { 
-            font-size: 0.9rem; 
-            color: var(--text-muted); 
-            margin-bottom: 20px; 
-        } 
-        
-        .price-tag { 
-            font-size: 2rem; 
-            font-weight: 800; 
-            color: var(--text-main); 
-            margin-bottom: 24px; 
-            display: flex; 
-            align-items: baseline; 
-            gap: 4px; 
-        } 
-        
-        .price-tag span { 
-            font-size: 1rem; 
-            color: var(--text-muted); 
-            font-weight: 400; 
-        } 
-        
-        .btn-checkout { 
-            display: block; 
-            width: 100%; 
-            background-color: var(--primary); 
-            color: white; 
-            text-align: center; 
-            padding: 16px; 
-            border-radius: var(--radius); 
-            font-size: 1.1rem; 
-            font-weight: 600; 
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --accent: #34d399;
+            --border: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .cover-wrapper {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .book-image {
+            max-width: 100%;
+            width: 180px;
+            height: auto;
+            border-radius: 4px 8px 8px 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 30px 24px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #1e3a8a;
+            color: #93c5fd;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            line-height: 1.25;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .author {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .btn-checkout {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
             border: none;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2); 
-            transition: all 0.2s ease; 
-            margin-bottom: 16px; 
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
+            transition: all 0.2s ease;
+            margin-bottom: 16px;
             cursor: pointer;
-        } 
-        
-        .btn-checkout:hover { 
-            background-color: var(--primary-hover); 
-            transform: translateY(-1px); 
-        } 
-        
-        .trust-banner { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 8px; 
-            font-size: 0.8rem; 
-            color: var(--text-muted); 
-            background: #1e293b; 
-            padding: 12px; 
-            border-radius: 8px; 
-            margin-bottom: 30px; 
-            border: 1px solid var(--border); 
-        } 
-        
-        .features-list { 
-            list-style: none; 
-            margin-bottom: 30px; 
-        } 
-        
-        .features-list li { 
-            position: relative; 
-            padding-left: 28px; 
-            margin-bottom: 14px; 
-            font-size: 0.95rem; 
-            color: var(--text-muted); 
-        } 
-            
-        .features-list li::before { 
-            content: "✓"; 
-            position: absolute; 
-            left: 0; 
-            color: var(--accent); 
-            font-weight: bold; 
-            font-size: 1.1rem; 
-            top: -2px; 
-        } 
-        
-        .faq-section { 
-            border-top: 1px solid var(--border); 
-            padding-top: 24px; 
-        } 
-        
-        .faq-section h3 { 
-            font-size: 1.1rem; 
-            margin-bottom: 16px; 
-        } 
-        
-        .faq-item { 
-            margin-bottom: 16px; 
-        } 
-        
-        .faq-q { 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            margin-bottom: 4px; 
-        } 
-        
-        .faq-a { 
-            font-size: 0.85rem; 
-            color: var(--text-muted); 
-        } 
+        }
+
+        .btn-checkout:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .trust-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+            top: -2px;
+        }
+
+        .faq-section {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        .faq-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 
         .footer-disclaimer {
             text-align: center;
@@ -198,13 +204,38 @@
             color: var(--text-muted);
             letter-spacing: 0.02em;
         }
+
+        /* ===== SMOOTH OVERLAY TRANSITION ===== */
+        /* Target Dodo's overlay when it appears */
+        [class*="dodo"],
+        [id*="dodo"],
+        iframe[src*="dodopayments"] {
+            animation: overlayFadeIn 0.5s ease !important;
+        }
+
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Also catch any modal/overlay that appears */
+        div[role="dialog"],
+        div[role="presentation"] {
+            animation: overlayFadeIn 0.4s ease !important;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="cover-wrapper">
-            <img src="Ebook-Cover.png" alt="The Hypertrophy Codex Book Cover" class="book-image">
+            <img src="Ebook-Cover.png" alt="The Hypertrophy Codex Book Cover" class="book-image" />
         </div>
 
         <div class="content">
@@ -214,7 +245,7 @@
 
             <div class="price-tag">$11.99 <span>USD</span></div>
 
-            <button onclick="openDodoCheckout()" class="btn-checkout">Buy</button>
+            <button onclick="openDodoCheckout()" class="btn-checkout">Checkout</button>
 
             <div class="trust-banner">
                 <span>🔒 Secure Global Card Checkout via Dodo Payments Merchant of Record</span>
@@ -228,7 +259,7 @@
 
             <div class="faq-section">
                 <h3>FAQs</h3>
-                
+
                 <div class="faq-item">
                     <div class="faq-q">How will the product be delivered?</div>
                     <div class="faq-a">The moment checkout finishes, a unique download link is securely sent straight to your email inbox automatically through Dodo Payments.</div>
@@ -253,27 +284,35 @@
     </div>
 
     <footer class="footer-disclaimer">
-       Copyright &copy; 2026 WANDERLXT. All rights reserved. No part of this publication may be reproduced or transmitted without prior written permission, except for brief written quotations permitted by copyright law. 
+        Copyright &copy; 2026 WANDERLXT. All rights reserved. No part of this publication may be reproduced or transmitted without prior written permission, except for brief written quotations permitted by copyright law.
     </footer>
 
-    <!-- Dodo Payments SDK (Correctly Loaded) -->
+    <!-- Dodo Payments SDK -->
     <script src="https://checkout.dodopayments.com/sdk.js"></script>
 
-    <!-- Checkout Logic (Fixed) -->
+    <!-- Checkout Logic with Smooth Fade-Out -->
     <script>
         function openDodoCheckout() {
-            if (typeof DodoPaymentsCheckout !== 'undefined' && DodoPaymentsCheckout.DodoPayments) {
-                DodoPaymentsCheckout.DodoPayments.Initialize({ 
-                    mode: "live", 
-                    displayType: "overlay"
-                }); 
-                
-                DodoPaymentsCheckout.DodoPayments.Checkout.open({ 
-                    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0Nmg9B8oRxYQpIdjuSBQJ?quantity=1&redirect_url=https://wanderlxt.github.io%2FSalespage%2F"
-                });
-            } else {
-                window.open("https://checkout.dodopayments.com/buy/pdt_0Nmg9B8oRxYQpIdjuSBQJ?quantity=1&redirect_url=https://wanderlxt.github.io%2FSalespage%2F");
-            }
+            // Fade out the container before redirecting
+            const container = document.querySelector('.container');
+            container.style.transition = 'opacity 0.4s ease';
+            container.style.opacity = '0';
+
+            setTimeout(() => {
+                if (typeof DodoPaymentsCheckout !== 'undefined' && DodoPaymentsCheckout.DodoPayments) {
+                    DodoPaymentsCheckout.DodoPayments.Initialize({
+                        mode: "live",
+                        displayType: "overlay"
+                    });
+                    DodoPaymentsCheckout.DodoPayments.Checkout.open({
+                        checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0Nmg9B8oRxYQpIdjuSBQJ?quantity=1&redirect_url=https://wanderlxt.github.io%2FSalespage%2F"
+                    });
+                } else {
+                    window.open("https://checkout.dodopayments.com/buy/pdt_0Nmg9B8oRxYQpIdjuSBQJ?quantity=1&redirect_url=https://wanderlxt.github.io%2FSalespage%2F");
+                }
+                // Reset opacity if they come back
+                setTimeout(() => { container.style.opacity = '1'; }, 500);
+            }, 400);
         }
     </script>
 
